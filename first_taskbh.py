@@ -4,7 +4,7 @@ import pynbody
 import matplotlib as plt
 
 #Loads snapshot
-s = pynbody.load ('/data/h258/stampedetesting/glenna/h258.cosmo50cmb.3072gst1bwdK1BH.000040')
+s = pynbody.load ('/data/h258/stampedetesting/glenna/h258.cosmo50cmb.3072gst1bwdK1BH.000128')
 
 #Put the units in the right way
 s.physical_units()
