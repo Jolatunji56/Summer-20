@@ -1,7 +1,7 @@
 
 import pynbody
 import matplotlib
-matplotlib.use('agg')
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -61,11 +61,11 @@ for i in currenthalo:
 
     BH_position = BH['pos']
 
-    BHx = BH['pos'][tuple([i],0)] #prints all x_positions for BHs
+    BHx = BH_position[[i],0] #prints all x_positions for BHs
 
-    BHy = BH['pos'][tuple([i],1)] #prints all y_positions for BHs
+    BHy = BH_position[[i],1] #prints all y_positions for BHs
 
-    BHz = BH['pos'][tuple([i],2)] #prints all z_positions for BHs
+    BHz = BH_position[[i],2] #prints all z_positions for BHs
 
     #locationg distance from center(cnt), using the distance formula
     Dist_cnt = (((BHx **2) + (BHy ** 2) + (BHz ** 2)) ** 0.5) #taking center position (intial postion x1,y1,z1) to be (0,0,0)
