@@ -48,6 +48,8 @@ Halo_ID = []
 Distance_cnt = []
 BHs_mass = []
 
+print len(currenthalo)
+
 
 for i in currenthalo:
 
@@ -59,16 +61,15 @@ for i in currenthalo:
 
     BH_position = BH['pos']
 
-    BHx = BH['pos'][[i],0] #prints all x_positions for BHs
+    BHx = BH['pos'][tuple([i],0)] #prints all x_positions for BHs
 
-    BHy = BH['pos'][[i],1] #prints all y_positions for BHs
+    BHy = BH['pos'][tuple([i],1)] #prints all y_positions for BHs
 
-    BHz = BH['pos'][[i],2] #prints all z_positions for BHs
+    BHz = BH['pos'][tuple([i],2)] #prints all z_positions for BHs
 
     #locationg distance from center(cnt), using the distance formula
-    Dist_cnt = ((BHx **2) + (BHy ** 2) + (BHz ** 2)) ** 0.5 #taking center position (intial postion x1,y1,z1) to be (0,0,0)
+    Dist_cnt = (((BHx **2) + (BHy ** 2) + (BHz ** 2)) ** 0.5) #taking center position (intial postion x1,y1,z1) to be (0,0,0)
 
-    #print (Dist_cnt)
 
     Iden_num.append(i)
     BHs_ID.append(BH['iord'][i])
@@ -79,11 +80,13 @@ for i in currenthalo:
     
 
 
-data = {'Iden_num':Iden_num, 'BHs_ID':BHs_ID,'Halo_ID':Halo_ID,'Distance_cnt':Distance_cnt, 'BHs_mass':BHs_mass}
+data = {'Iden_num':Iden_num, 'BHs_ID':BHs_ID,'Halo_ID':Halo_ID,'Distance_cnt(kpc)':Distance_cnt, 'BHs_mass(Msol)':BHs_mass}
 
 #print(data)
 
 df = pd.DataFrame(data)
+
+df.to_csv('/home/josh/Research-F19/Summer-20/BHs_data_file.csv')
 
 print(df)
 
