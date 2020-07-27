@@ -2,10 +2,10 @@ import pynbody
 import numpy as np
 import pandas as pd
 import matplotlib.pylab as plt
+import readcol
 
 
-
-#files = readcol.readcol('/data/h258/stampedetesting/glenna/h258.cosmo50cmb.3072gst1bwdK1BH.000128')
+files = readcol.readcol('/data/h258/stampedetesting/glenna/h258.cosmo50cmb.3072gst1bwdK1BH.000128')
 
 
 # function to find black hole
